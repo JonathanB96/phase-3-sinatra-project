@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import "./Home.css"
 import Card from './Card';
-import { render } from 'react-dom';
+
 import { useHistory } from 'react-router-dom'
 
 
@@ -108,7 +108,6 @@ function genreSubmit(e){
         <form onSubmit={genreSubmit}>
           <input type="text" placeholder='Add a movie genre' value={newGenre} onChange={genreChange}/>
           <input type="submit" value="Add Genre" />
-
         </form>
         
         

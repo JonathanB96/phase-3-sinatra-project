@@ -18,7 +18,7 @@ export default function Card({movie}) {
   <div className={btn?"card":"hide"} style={{backgroundImage: `url($)`}}>
       <h4>{movie.title}</h4>
       <h3>{movie.year}</h3>
-     <img className='card-img' src={movie.image_url}/>
+     <img className='card-img' src={movie.image_url} alt={movie.title}/>
 
         
     

@@ -3,15 +3,15 @@ import "./Header.css"
 import { NavLink } from "react-router-dom";
 import { useHistory } from 'react-router';
 
-const linkStyles = {
-    display: "inline-block",
-    width: "50px",
-    padding: "12px",
-    margin: "0 6px 6px",
-    background: "blue",
-    textDecoration: "none",
-    color: "white",
-  };
+// const linkStyles = {
+//     display: "inline-block",
+//     width: "50px",
+//     padding: "12px",
+//     margin: "0 6px 6px",
+//     background: "blue",
+//     textDecoration: "none",
+//     color: "white",
+//   };
 
 export default function Header() {
 
