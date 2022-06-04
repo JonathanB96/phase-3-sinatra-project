@@ -50,6 +50,8 @@ class ApplicationController < Sinatra::Base
     new_genre = Genre.create(name: params[:name])
     new_genre.to_json
   end
+
+  
    
   
 
