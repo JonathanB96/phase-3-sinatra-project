@@ -37,6 +37,13 @@ class ApplicationController < Sinatra::Base
       genre_id: Genre.find_by(name: params[:genre]).id)
     movies.to_json
   end
+
+  delete '/movies/:id' do
+    # binding.pry
+    movie = Movie.find(params[:id])
+    movie.destroy
+    movie.to_json
+  end
    
   
 
