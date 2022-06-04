@@ -27,6 +27,19 @@ class ApplicationController < Sinatra::Base
     
   end
 
+  patch '/movies/:id' do
+
+    movies = Movie.find(params[:id])
+    movies.update(
+      title: params[:title],
+      year: params[:year],
+      image_url: params[:image_url],
+      genre_id: Genre.find_by(name: params[:genre]).id)
+    movies.to_json
+  end
+   
+  
+
 
 
 end
