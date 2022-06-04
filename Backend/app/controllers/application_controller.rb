@@ -44,6 +44,12 @@ class ApplicationController < Sinatra::Base
     movie.destroy
     movie.to_json
   end
+
+  post '/genres' do
+
+    new_genre = Genre.create(name: params[:name])
+    new_genre.to_json
+  end
    
   
 
