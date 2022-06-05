@@ -1,20 +1,22 @@
 require 'pry'
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
-  
+  # movies GET requests 
   # Add your routes here
+
+  #Movies GET requests
   get "/movies" do
     movies= Movie.all 
     movies.to_json
    
   end
-  #
+  
   get "/movies/:title" do
     # binding.pry
     movies = Movie.where("title LIKE ?", params[:title] + "%")
     movies.to_json
   end
-
+  #Movies POST requests
   post '/movies' do
     # binding.pry  
     
@@ -28,6 +30,7 @@ class ApplicationController < Sinatra::Base
     new_movie.to_json
     
   end
+  #Movies PATCH request
 
   patch '/movies/:id' do
 
@@ -39,8 +42,7 @@ class ApplicationController < Sinatra::Base
       genre_id: Genre.find_by(name: params[:genre]).id)
     movies.to_json
   end
-   
-  
+  #Movies DELETE request 
 
 
     delete '/movies/:id' do
@@ -50,11 +52,13 @@ class ApplicationController < Sinatra::Base
       movie.to_json
     end
 
+    #Genres GET requests
+
     get '/genres' do
       genres = Genre.all
       genres.to_json
     end
-
+    
     get '/genres/:name' do
       # binding.pry
       if params[:name] == "Sort by genre"
@@ -67,13 +71,14 @@ class ApplicationController < Sinatra::Base
       end
       
     end
+    #Genres POST request
 
     post '/genres' do
 
       new_genre = Genre.create(name: params[:name])
       new_genre.to_json
     end
-
+    #Genres POST request
     delete '/genres/:name' do 
 
      genre = Genre.find_by(name: params[:name])

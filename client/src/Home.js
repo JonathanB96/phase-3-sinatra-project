@@ -19,7 +19,7 @@ useEffect(()=>{
     fetch('http://localhost:9292/movies')
     .then(res=>res.json())
     .then(data=>{
-      //Updating the "recipe" state variable when the promise is resolved
+    //Updating the "movie" state variable when the promise is resolved
       console.log(data)
         setMovie(data)
         setList(data)
@@ -51,6 +51,7 @@ function handleChange(e){
   })
   
 }
+//
 function handleClick(){
   fetch('http://localhost:9292/movies')
   .then(res=>res.json())
