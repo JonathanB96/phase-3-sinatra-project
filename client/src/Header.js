@@ -54,6 +54,17 @@ export default function Header() {
       >
         Add Movie
       </NavLink></li>
+      <li> <NavLink
+        to="/EditMovie"
+        exact
+        activeStyle={{
+          background: "#000",
+        }}
+      >
+        Edit Movie
+      </NavLink></li>
+      
+      
   </ul>
 
     

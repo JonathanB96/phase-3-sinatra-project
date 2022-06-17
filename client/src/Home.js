@@ -27,6 +27,7 @@ useEffect(()=>{
     })
 },[])
 
+//GET request as a side effect
 useEffect(()=>{
   fetch('http://localhost:9292/genres')
   .then(res=>res.json())

@@ -10,10 +10,10 @@ class ApplicationController < Sinatra::Base
     movies.to_json
    
   end
-  
+  #search
   get "/movies/:title" do
     # binding.pry
-    movies = Movie.where("title LIKE ?", params[:title] + "%")
+    movies = Movie.where("title LIKE ?", params[:title])
     movies.to_json
   end
   #Movies POST requests
@@ -30,13 +30,15 @@ class ApplicationController < Sinatra::Base
     new_movie.to_json
     
   end
+
   #Movies PATCH request
 
-  patch '/movies/:id' do
-
-    movies = Movie.find(params[:id])
+  patch '/movies/:movie' do
+    #binding.pry
+    movies = Movie.find_by("title LIKE ?",  params[:movie])
+    
     movies.update(
-      title: params[:title],
+      title: params[:newTitle],
       year: params[:year],
       image_url: params[:image_url],
       genre_id: Genre.find_by(name: params[:genre]).id)
